@@ -261,6 +261,7 @@ import Foundation
     /// - Returns: An item animation configuration object.
     ///
     @objc static func circularSlideIn(withRadius radius: CGFloat = 100) -> JJItemAnimationConfiguration {
+        print("here first")
         let configuration = JJItemAnimationConfiguration()
         configuration.itemLayout = .circular(withRadius: radius)
         configuration.closedState = .circularOffset(distance: radius * 0.75)
@@ -317,6 +318,7 @@ import Foundation
             var index: Int = 0
             for item in items {
                 let angle = JJItemAnimationConfiguration.angleForItem(at: index, numberOfItems: numberOfItems, actionButton: actionButton)
+                print("here second")
                 let horizontalDistance = radius * cos(angle)
                 let verticalDistance = radius * sin(angle)
 
@@ -453,6 +455,8 @@ internal extension JJItemAnimationConfiguration {
 
         let startAngle: CGFloat = actionButton.isOnLeftSideOfScreen ? 2 * .pi : .pi
         let endAngle: CGFloat = 1.5 * .pi
+        
+        print(";ast")
 
         switch (numberOfItems, index) {
         case (1, _):
